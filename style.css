@@ -268,7 +268,7 @@ border-top-right-radius: 10px;
 #img3 {
   background-image: 
   /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
-    url(images/myGame_loot_test.png);
+    url(images/myGame_loot_test.PNG);
   background-size: cover;
   background-position: center;       /* Zentriert das Bild im Container */
   background-blend-mode: overlay;
@@ -280,7 +280,7 @@ border-top-right-radius: 10px;
 #img4 {
   background-image: 
   /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
-    url(images/portfolio2.png);
+    url(images/portfolio2.PNG);
   background-size: cover;
   background-position: center;       /* Zentriert das Bild im Container */
   background-blend-mode: overlay;
