@@ -1,0 +1,638 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(264deg, rgba(18, 18, 18, 1) 0%, rgba(33, 33, 33, 1) 49%, rgba(18, 18, 18, 1) 100%);
+  /*background-image: url(images/planet.jpg);
+  background-size: cover;
+  backdrop-filter: blur(5px); /* Milchglas-Effekt */
+
+}
+
+.body_content {
+  width: 66%; /* Flexible Breite des Inhalts, kann nach Bedarf angepasst werden */
+  max-width: 1000px; /* Maximale Breite auf großen Bildschirmen */
+  margin: 0 auto; /* Zentriert den Container horizontal */
+  padding: 0 20px; /* Optional: Padding für etwas Abstand an den Seiten */
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  margin-top: 140px;
+  text-align: center;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+
+.header h1 {
+  font-size: 66px;
+  background: linear-gradient(to right, #00ff0d, #00ff88); /* Farbverlauf von links nach rechts */
+  -webkit-background-clip: text; /* Text-Clip für Farbverlauf */
+  color: transparent; /* Textfarbe unsichtbar, damit der Farbverlauf durchscheint */
+  text-align: left;
+  margin-bottom: 0px;
+  margin-top: 0;
+
+  /* Grund-Glow-Effekt *//*
+  text-shadow: 
+    0 0 10px rgba(0, 255, 136, 0.8),
+    0 0 20px rgba(0, 255, 136, 0.6),
+    0 0 30px rgba(0, 255, 136, 0.4),
+    0 0 40px rgba(0, 255, 136, 0.2);
+  
+  /* Animation *//*
+  animation: glowPulse 3s ease-in; /* Animationsdauer und Richtung */
+}/*
+
+@keyframes glowPulse {
+  100% {
+    text-shadow: 
+      0 0 10px rgba(0, 255, 136, 0.8),
+      0 0 20px rgba(0, 255, 136, 0.6),
+      0 0 30px rgba(0, 255, 136, 0.4),
+      0 0 40px rgba(0, 255, 136, 0.2);
+  }
+  0% {
+    text-shadow: 
+      0 0 5px rgba(0, 255, 136, 0.2),
+      0 0 10px rgba(0, 255, 136, 0.1),
+      0 0 15px rgba(0, 255, 136, 0.05),
+      0 0 20px rgba(0, 255, 136, 0.03);
+  }
+}*/
+
+
+
+.header h2 {
+  /*font-family: 'Roboto', sans-serif;*/
+  font-size: 44px;
+  font-weight: lighter;
+  text-align: left;
+  color: #FFF; /* Textfarbe unsichtbar, damit der Farbverlauf durchscheint */
+  margin-top: 0; /* Mehr Abstand nach oben, falls nötig */
+  margin-bottom: 20px; /* Entfernt den Abstand nach unten */
+  padding-bottom: 0; /* Entfernt unerwünschtes Padding */
+}
+
+.header h3, h3 {
+  /*font-family: 'Roboto', sans-serif;*/
+  font-size: 20px;
+  font-weight: lighter;
+  text-align: left;
+  color: #D7D7D7; /* Textfarbe unsichtbar, damit der Farbverlauf durchscheint */
+  margin-top: 0; /* Mehr Abstand nach oben, falls nötig */
+  margin-bottom: 0; /* Entfernt den Abstand nach unten */
+  padding-bottom: 0; /* Entfernt unerwünschtes Padding */
+}
+
+h4 {
+  margin-bottom: 0;
+}
+
+.signature {
+  font-family: 'Alex Brush', cursive;
+  font-size: 48px;
+  font-weight: 900;
+  color:#FFF;
+  text-align: left;
+}
+
+/* Container auf left align setzen */
+.intro-container {
+  display: block;
+  text-align: left; /* Stellt sicher, dass der Text links ausgerichtet wird */
+  margin-bottom: 20px;
+}
+
+/* Alle Elemente inline anzeigen */
+.intro, .name1 {
+  display: inline;
+}
+
+/* Optional: Formatierungen für die h1- und h2-Tags */
+.name1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.intro {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Stil für die Intro-Animation */
+.intro-animation {
+  opacity: 0;                  
+  transform: translateY(120px); 
+  animation: slideIn 0.8s cubic-bezier(0.25, 1, 0.95, 1) forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(120px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    
+  }
+}
+
+
+
+
+h2 {
+  color: white;
+  font-weight: lighter;
+}
+
+.header p {
+  font-size: 16px;
+  /* background: linear-gradient(to right, #bebebe, #ffffff,  #bebebe); /* Farbverlauf von links nach rechts */
+  /* -webkit-background-clip: text;  /* Text-Clip für Farbverlauf */
+  color: white;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#Logo {
+  background: linear-gradient(to right, #00ff0d, #00eeff, #d400ff); /* Farbverlauf von links nach rechts */
+  -webkit-background-clip: text; /* Text-Clip für Farbverlauf */
+  color: transparent; /* Textfarbe unsichtbar, damit der Farbverlauf durchscheint */
+  font-weight: 900;
+  padding-top: 11px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  position: sticky; /* Bleibt beim Scrollen sichtbar */
+  top: 40px; /* Oberseite der Seite */
+  width: fit-content;
+  z-index: 1000; /* Überlagert andere Inhalte */
+  padding: 10px;
+  margin: 0 auto; /* Zentriert die Navigationsleiste horizontal */
+  text-align: center;
+  border-radius: 50px; /* Abgerundete Ecken */
+  backdrop-filter: blur(10px); /* Milchglas-Effekt */
+  background-color: rgba(18, 18, 18, 0.6); /* Dunkler Hintergrund mit Transparenz */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Heller, schmaler Rand */
+}
+
+/* Style the topnav links */
+.topnav a {
+  display: inline-block;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #949494;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: color 0.5s ease; /* Übergangseffekt für die Farbe */
+}
+
+.topnav a:hover {
+  color: #00FF3A;
+  /*color: #CCCCCC;*/
+}
+
+/* Aktive Farbe */
+.topnav a.active {
+  color: #00FF3A;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+  padding-right: 20px;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: white;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  width: 100%;
+  padding: 20px;
+  /*background: #333;*/
+  background-image: 
+  linear-gradient(to bottom right, rgba(0, 255, 13, 0.5), rgba(0, 255, 136, 0.5));
+background-size: cover;
+background-blend-mode: overlay;
+object-fit: contain;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+
+.fakeimg2 {
+  position: relative;
+  width: 90%;
+  height: 600px;
+  background-image: 
+  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(155, 155, 155, 0.0), 
+  rgba(155, 155, 155, 0.0), rgba(155, 155, 155, 0.0), rgba(0, 255, 13, 0.7)),*/
+  url(images/me_color.jpg); /*url(images/me_bw.jpg);*/
+  background-size: cover;
+  background-position: left;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow: hidden; /* Verhindert das Herauslaufen von Elementen */
+  /*transition: background 0.5s ease-in-out;*/
+  transition: scale 0.5s ease-in-out;
+}
+
+/* Zweites Bild als Overlay für Hover 
+.fakeimg2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+  linear-gradient(to bottom right, rgba(0, 255, 13, 0.4), rgba(155, 155, 155, 0.0), 
+  rgba(155, 155, 155, 0.0), /*rgba(155, 155, 155, 0.0), rgba(155, 155, 155, 0.0),
+  rgba(0, 255, 13, 0.4)),
+  url(images/me_color.jpg); /* Zweites Bild für den Hover-Effekt 
+  background-size: cover;
+  background-position: left;
+  opacity: 0; /* Unsichtbar, bis Hover 
+  transition: opacity 0.5s ease-in-out; /* Übergang für das Einblenden 
+  transition: scale 0.5s ease-in-out; /* Ändert die Skalierung 
+} */
+
+/* Hover-Effekt, blendet das zweite Bild ein 
+.fakeimg2:hover{
+  scale: 1.01;
+}
+*/
+
+
+#img1 {
+  background-image: 
+  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
+    url(images/aquarium_website.png);
+  background-size: cover;
+  background-position: center;       /* Zentriert das Bild im Container */
+  background-blend-mode: overlay;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#img2 {
+  background-image: 
+  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
+    url(images/MMP_2.png);
+  background-size: cover;
+  background-position: center;       /* Zentriert das Bild im Container */
+  background-blend-mode: overlay;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#img3 {
+  background-image: 
+  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
+    url(images/myGame_loot_test.png);
+  background-size: cover;
+  background-position: center;       /* Zentriert das Bild im Container */
+  background-blend-mode: overlay;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#img4 {
+  background-image: 
+  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
+    url(images/portfolio2.png);
+  background-size: cover;
+  background-position: center;       /* Zentriert das Bild im Container */
+  background-blend-mode: overlay;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#img5 {
+  background-image: 
+  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
+    url(images/PDM.PNG);
+  background-size: cover;
+  background-position: center;       /* Zentriert das Bild im Container */
+  background-repeat: no-repeat;      /* Verhindert Wiederholung des Bildes */
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+#img6 {
+  background-image: 
+  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
+    url(images/Filmposter_final.png);
+  background-size: cover;
+  background-position: center;       /* Zentriert das Bild im Container */
+  background-repeat: no-repeat;      /* Verhindert Wiederholung des Bildes */
+  object-fit: cover;                 /* Dehnt das Bild aus, um den Container zu füllen */
+  border-radius: 10px;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6 {
+  background-blend-mode: multiply;
+}
+
+/* TYPING ANIMATION */
+.container {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container .text {
+  position: relative;
+  font-size: 30px;
+  font-weight: 600;
+  white-space: nowrap; /* Verhindert Zeilenumbruch */
+}
+
+.container .text.first-text {
+  color: #FFF;
+  margin-right: 10px; /* Etwas Platz zwischen dem ersten und zweiten Text */
+  display: inline-block;
+}
+
+.container .text.sec-text {
+  position: relative;
+  display: inline-block;
+  color: #812af1;
+  width: 160px; /* Feste Breite basierend auf der Zeichenanzahl */
+  overflow: hidden; /* Text, der nicht in die Breite passt, wird abgeschnitten */
+}
+
+.text.sec-text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  border-left: 2px solid #812af1;
+  animation: animate 4s steps(20) infinite; /* steps(20) simuliert das Tippen */
+}
+
+@keyframes animate {
+  0% {
+    left: 0; /* Startet von links */
+  }
+  40% {
+    left: calc(100% + 4px); /* Geht über die komplette Breite des Textes hinaus */
+  }
+  60% {
+    left: calc(100% + 4px); /* Pausiert kurz am Ende */
+  }
+  100% {
+    left: 0; /* Zurück zum Anfang */
+  }
+}
+/* TYPING ANIMATION END */
+
+
+
+
+
+
+.article {
+  padding-top: 5%;
+  padding-bottom: 60%;
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-top: 20px;
+}
+
+.article h4 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.article h5 {
+  margin-top: 0px;
+  color: #D7D7D7;
+}
+
+.article a {
+  color: #FFF;
+}
+
+.article .card {
+  float: left;
+  width: 31.3%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+/* Add a card effect for articles */
+
+.card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.3s ease; /* Für den Abdunklungseffekt */
+}
+
+/* Abdunklungseffekt und Vignette beim Hover */
+.card:hover {
+  filter: brightness(0.6); /* Abdunkelt das Bild leicht */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  /*background-image: radial-gradient(circle, #8100FF, #AA00FF);*/
+  background-color: #111111;
+  /*background: linear-gradient(to right, #00ff0d, #00ff88); /* Farbverlauf von links nach rechts */
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Heller, schmaler Rand */
+  display: flex;               /* Flexbox aktivieren */
+  flex-direction: row;      /* Elemente in einer Zeile anordnen */
+  align-items: center;         /* Elemente zentrieren */
+  text-align: center;
+}
+
+.footer h3, 
+.footer h2 {
+  /*color: #FFF;*/
+  padding-right: 10px;
+}
+
+
+.resume {
+  padding: 20px;
+  text-align: center;
+  background-color: #FFF;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 1px 2px #DAD7D7;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* Container für alle Abschnitte */
+.container {
+  width: 100%;                 /* Container auf 100% Breite */
+  display: flex;               /* Flexbox für Container */
+  flex-direction: column;      /* Vertikale Anordnung */
+  align-items: flex-start;     /* Links ausrichten */
+}
+
+/* Top Section */
+.resume .top_section {
+  width: 100%;                 /* Die Breite auf 100% setzen */
+  text-align: left;          /* Text in der top_section zentrieren */
+  margin-bottom: 20px;         /* Abstand zum nächsten Abschnitt */
+}
+
+/* Details und Skills */
+.resume .details {
+  width: 100%;                 /* Diese Abschnitte auch auf 100% setzen */
+  text-align: left;            /* Text linksbündig ausrichten */
+}
+
+.resume .skills {
+  width: 100%;                 /* Diese Abschnitte auch auf 100% setzen */
+  text-align: left;            /* Text linksbündig ausrichten */
+}
+
+/* Abschnittsüberschrift */
+.section__title {
+  font-weight: bold;           /* Fettdruck für die Titel */
+  text-transform: uppercase;
+  margin-top: 20px;           /* Abstand nach oben */
+  color: #00FF3A;              /* Farbe der Titel */
+}
+
+/* Der Rest deines CSS bleibt unverändert */
+.resume h2 {
+  color: black;
+}
+
+/* Anpassung der Containergröße und Farben für den Lebenslauf im Footer */
+.resume .container {
+  /*background: rgba(255, 255, 255, 0.1);*/
+  padding: 20px;
+  /*border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+}
+
+.resume .top_section .full-name {
+  font-size: 32px;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.resume .top_section .contact-info, 
+.resume .top_section .about {
+  color: #000;
+  font-size: 14px;
+}
+
+/* Stil für die rechte Spalte in der Fußzeile */
+.resume .details .section__list-item .right, .right, .top_right {
+  text-align: left; /* Text rechtsbündig ausrichten */
+  width: 50%;        /* Breite der rechten Spalte, falls nötig */
+}
+
+.top_right {
+  text-align: top;
+  width: 50%;        /* Breite der rechten Spalte, falls nütig */
+}
+
+/* Optional: Stil für die linke Spalte, um sie entsprechend zu gestalten */
+.resume .details .section__list-item .left, .left, .top_left {
+  width: 50%;        /* Breite der linken Spalte */
+  text-align: left;  /* Text linksbündig ausrichten */
+}
+
+/* Wenn du die Breite der links und rechts Elemente anpassen möchtest, um sicherzustellen, dass sie nebeneinander passen */
+.resume .details .section__list-item {
+  display: flex;      /* Flexbox aktivieren, um linke und rechte Spalte nebeneinander anzuzeigen */
+  justify-content: space-between; /* Platz zwischen den Spalten */
+  align-items: center; /* Vertikal zentrieren */
+}
+
+.section__list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.resume .skills .skills__item .right input[type="checkbox"] + label {
+  background: #C3DEF3;
+}
+
+.resume .skills .skills__item .right input[type="checkbox"]:checked + label {
+  background: #79A9CE;
+}
+
+/* Responsive Anpassungen */
+@media screen and (max-width: 800px) {
+  .footer .top_section,
+  .footer .details {
+    width: 100%;               /* Auf mobilen Geräten 100% Breite */
+    padding: 0 10px;           /* Padding an den Seiten für mobilen Abstand */
+  }
+}
+
+
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
