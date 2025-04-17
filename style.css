@@ -12,8 +12,8 @@ body {
 }
 
 .body_content {
-  width: 66%; /* Flexible Breite des Inhalts, kann nach Bedarf angepasst werden */
-  max-width: 1000px; /* Maximale Breite auf großen Bildschirmen */
+  width: 77%; /* Flexible Breite des Inhalts, kann nach Bedarf angepasst werden */
+  max-width: 1200px; /* Maximale Breite auf großen Bildschirmen */
   margin: 0 auto; /* Zentriert den Container horizontal */
   padding: 0 20px; /* Optional: Padding für etwas Abstand an den Seiten */
 }
@@ -207,10 +207,46 @@ h2 {
 }
 
 
+.project-section {
+  background-color: rgba(255, 255, 255, 0.02); /* leicht abgesetzter Hintergrund */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin: 40px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.project-section:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.project-section h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.project-section p,
+.project-section li {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.project-section ul {
+  margin-left: 20px;
+  padding-left: 0;
+  list-style-type: '🔹 ';
+}
+
+
+
 /* Fake image */
 .fakeimg {
   width: 100%;
-  aspect-ratio: 1.2 / 1; /* Höhe = Breite */
+  aspect-ratio: 16 / 9; /* Höhe = Breite */
   padding: 20px;
   /*background: #333;*/
   background-image: 
@@ -267,55 +303,55 @@ border-top-right-radius: 10px;
 
 #img3 {
   background-image: 
-  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
-    url(images/myGame_loot_test.PNG);
+  linear-gradient(to bottom right, rgba(140, 0, 175, 0.7), rgba(159, 0, 180, 0.7)),
+    url(images/unity_thumbnail.jpg);
   background-size: cover;
   background-position: center;       /* Zentriert das Bild im Container */
   background-blend-mode: overlay;
   object-fit: contain;
   border-radius: 10px;
-  aspect-ratio: 1.2 / 1; /* Höhe = Breite */
+  aspect-ratio: 16 / 9; /* Höhe = Breite */
 }
 
 #img4 {
   background-image: 
-  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
-    url(images/portfolio2.PNG);
+  linear-gradient(to bottom right, rgba(30, 128, 0, 0.7), rgba(0, 139, 42, 0.7)),
+    url(images/frond_end_thumbnail.jpg);
   background-size: cover;
   background-position: center;       /* Zentriert das Bild im Container */
   background-blend-mode: overlay;
   object-fit: contain;
   border-radius: 10px;
-  aspect-ratio: 1.2 / 1; /* Höhe = Breite */
+  aspect-ratio: 16 / 9; /* Höhe = Breite */
 }
 
 #img5 {
   background-image: 
-  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
-    url(images/PDM.PNG);
+  linear-gradient(to bottom right, rgb(252, 143, 0), rgb(255, 174, 0)),
+    url(images/blender_thumbnail.jpg);
   background-size: cover;
   background-position: center;       /* Zentriert das Bild im Container */
   background-repeat: no-repeat;      /* Verhindert Wiederholung des Bildes */
   width: 100%;
-  aspect-ratio: 1.2 / 1; /* Höhe = Breite */
+  aspect-ratio: 16 / 9; /* Höhe = Breite */
   object-fit: fill;
   border-radius: 10px;
 }
 
 #img6 {
   background-image: 
-  /*linear-gradient(to bottom right, rgba(0, 255, 13, 0.7), rgba(0, 255, 136, 0.7)),*/
-    url(images/Filmposter_final.png);
+  linear-gradient(to bottom right, rgba(0, 60, 255, 0.7), rgba(0, 225, 255, 0.7)),
+    url(images/photoshop_thumbnail.jpg);
   background-size: cover;
   background-position: center;       /* Zentriert das Bild im Container */
   background-repeat: no-repeat;      /* Verhindert Wiederholung des Bildes */
   object-fit: cover;                 /* Dehnt das Bild aus, um den Container zu füllen */
   border-radius: 10px;
-  aspect-ratio: 1.2 / 1; /* Höhe = Breite */
+  aspect-ratio: 16 / 9; /* Höhe = Breite */
 }
 
 #img1, #img2, #img3, #img4, #img5, #img6 {
-  background-blend-mode: multiply;
+  background-blend-mode: color;
 }
 
 
@@ -344,10 +380,10 @@ border-top-right-radius: 10px;
 
 .article .card {
   float: left;
-  width: 47%;
-  margin-right: 1.5%;
-  margin-left: 1.5%;
-  aspect-ratio: 1 / 1; /* Höhe = Breite */
+  width: 48%;
+  margin-right: 1%;
+  margin-left: 1%;
+  aspect-ratio: 16 / 9; /* Höhe = Breite */
 }
 
 
@@ -357,29 +393,90 @@ border-top-right-radius: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
   text-align: left;
   position: relative;
   overflow: hidden;
-  transition: filter 0.3s ease; /* Für den Abdunklungseffekt */
+  transition: filter 0.3s ease;
 }
 
-/* Abdunklungseffekt und Vignette beim Hover */
-.card:hover {
-  filter: brightness(0.6); /* Abdunkelt das Bild leicht */
+.card:hover .fakeimg {
+  filter: brightness(0.6);
 }
 
+/* Neuer Aufbau: Inhalt im Bild, unten */
 .card-content {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   padding: 0 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover .card-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Versetzte Animation für Text & Icons */
+.text-block h4,
+.text-block h5,
+.icon {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.card:hover .text-block h4 {
+  transition-delay: 0.1s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card:hover .text-block h5 {
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .icon:nth-child(1) {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card:hover .icon:nth-child(2) {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card:hover .icon:nth-child(3) {
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card:hover .icon:nth-child(4) {
+  transition-delay: 0.6s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .icon:nth-child(5) {
+  transition-delay: 0.7s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .text-block h4,
 .text-block h5 {
   margin: 0;
-  text-align: left;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .icon-block {
@@ -388,9 +485,11 @@ border-top-right-radius: 10px;
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.7));
 }
+
 
 
 
@@ -420,122 +519,6 @@ border-top-right-radius: 10px;
 .footer h2 {
   /*color: #FFF;*/
   padding-right: 10px;
-}
-
-
-.resume {
-  padding: 20px;
-  text-align: center;
-  background-color: #FFF;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 1px 1px 2px #DAD7D7;
-  border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-
-
-/* Container für alle Abschnitte */
-.container {
-  width: 100%;                 /* Container auf 100% Breite */
-  display: flex;               /* Flexbox für Container */
-  flex-direction: column;      /* Vertikale Anordnung */
-  align-items: flex-start;     /* Links ausrichten */
-}
-
-/* Top Section */
-.resume .top_section {
-  width: 100%;                 /* Die Breite auf 100% setzen */
-  text-align: left;          /* Text in der top_section zentrieren */
-  margin-bottom: 20px;         /* Abstand zum nächsten Abschnitt */
-}
-
-/* Details und Skills */
-.resume .details {
-  width: 100%;                 /* Diese Abschnitte auch auf 100% setzen */
-  text-align: left;            /* Text linksbündig ausrichten */
-}
-
-.resume .skills {
-  width: 100%;                 /* Diese Abschnitte auch auf 100% setzen */
-  text-align: left;            /* Text linksbündig ausrichten */
-}
-
-/* Abschnittsüberschrift */
-.section__title {
-  font-weight: bold;           /* Fettdruck für die Titel */
-  text-transform: uppercase;
-  margin-top: 20px;           /* Abstand nach oben */
-  color: #00FF3A;              /* Farbe der Titel */
-}
-
-/* Der Rest deines CSS bleibt unverändert */
-.resume h2 {
-  color: black;
-}
-
-/* Anpassung der Containergröße und Farben für den Lebenslauf im Footer */
-.resume .container {
-  /*background: rgba(255, 255, 255, 0.1);*/
-  padding: 20px;
-  /*border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
-}
-
-.resume .top_section .full-name {
-  font-size: 32px;
-  text-transform: uppercase;
-  color: #000;
-  margin-bottom: 10px;
-}
-
-.resume .top_section .contact-info, 
-.resume .top_section .about {
-  color: #000;
-  font-size: 14px;
-}
-
-/* Stil für die rechte Spalte in der Fußzeile */
-.resume .details .section__list-item .right, .right, .top_right {
-  text-align: left; /* Text rechtsbündig ausrichten */
-  width: 50%;        /* Breite der rechten Spalte, falls nötig */
-}
-
-.top_right {
-  text-align: top;
-  width: 50%;        /* Breite der rechten Spalte, falls nütig */
-}
-
-/* Optional: Stil für die linke Spalte, um sie entsprechend zu gestalten */
-.resume .details .section__list-item .left, .left, .top_left {
-  width: 50%;        /* Breite der linken Spalte */
-  text-align: left;  /* Text linksbündig ausrichten */
-}
-
-/* Wenn du die Breite der links und rechts Elemente anpassen möchtest, um sicherzustellen, dass sie nebeneinander passen */
-.resume .details .section__list-item {
-  display: flex;      /* Flexbox aktivieren, um linke und rechte Spalte nebeneinander anzuzeigen */
-  justify-content: space-between; /* Platz zwischen den Spalten */
-  align-items: center; /* Vertikal zentrieren */
-}
-
-.section__list-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.resume .skills .skills__item .right input[type="checkbox"] + label {
-  background: #C3DEF3;
-}
-
-.resume .skills .skills__item .right input[type="checkbox"]:checked + label {
-  background: #79A9CE;
 }
 
 /* Responsive Anpassungen */
