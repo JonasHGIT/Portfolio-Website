@@ -369,6 +369,31 @@ border-top-right-radius: 10px;
   filter: brightness(0.6); /* Abdunkelt das Bild leicht */
 }
 
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.text-block h4,
+.text-block h5 {
+  margin: 0;
+  text-align: left;
+}
+
+.icon-block {
+  display: flex;
+  gap: 8px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Seitentitel -->
+  <title>Portfolio | Jonas Hammer</title>
+
+  <!-- Favicon -->
+  <!-- Alternative Formate für Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/retro.png">
+
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Jonas Hammer, a Media Technology student">
+  <meta name="keywords" content="Media Technology, Portfolio, Jonas Hammer">
+  <meta name="author" content="Jonas Hammer">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Einbindung in den <head>-Bereich deiner HTML-Datei -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap">
+
+</head>
+<body>
+  <div class="body_content">
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <a href="about.html">About Me</a>
+    <a href="contact.html">Contact</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <div class="header">
+    <div class="intro-animation">
+      <div class="intro-container">
+        <h2 class="intro">Hey, I'm</h2>
+        <h1 class="name1">Jonas</h1>
+        <!-- <h2 class="intro">.</h2> -->
+      </div>    
+      <h3>I am a Media Technology student with a curiosity for immersive media, interactive design, and innovative user experiences.</h3>
+  </div>
+  
+  <div class="article">
+    <h2>Featured Projects</h2>
+    <h3>Title description, Dec 7, 2017</h3>
+
+    <a href="photoshop_project.html">
+      <div class="card">
+        <div id="img6" class="fakeimg"></div>
+        <h4>WITHSTANDING POSTER</h4>
+        <h5>Photoshop Project, Sep 2, 2017</h5>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+
+<div class="footer">
+  <h3>Build with ❤️ by Jonas</h3>
+  <h3>|</h3>
+  <h3>2024</h3>
+  <h3>|</h3>
+  <h3>Footer</h3>
+</div>
+</div>
+</body>
+
+<script>
+  document.querySelectorAll('.topnav a').forEach(link => {
+    link.addEventListener('click', () => {
+      const nav = document.querySelector('.topnav');
+      nav.classList.add('animate-blur');
+      
+      // Entfernt die Klasse nach 3 Sekunden, um die Animation beim nächsten Klick neu zu starten
+      setTimeout(() => {
+        nav.classList.remove('animate-blur');
+      }, 2800);
+    });
+  });
+</script>
+
+
+</html>
+
+
