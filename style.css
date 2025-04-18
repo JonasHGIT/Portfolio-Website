@@ -18,6 +18,49 @@ body {
   padding: 0 20px; /* Optional: Padding für etwas Abstand an den Seiten */
 }
 
+.funfact-wrapper {
+  position: relative;
+  margin-top: 0px;
+  margin-left: 260px; /* nach rechts verschoben – anpassen nach Bedarf */
+}
+
+.funfact-bubble {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #f2f2f2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 14px;
+  font-style: italic;
+  /*max-width: 400px;*/
+
+  position: relative;
+  animation: bubbleFadeIn 12s ease-in-out infinite;
+  backdrop-filter: blur(4px);
+}
+
+/* Dezenter, langsamer Effekt */
+@keyframes bubbleFadeIn {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Sprechblasen-Pfeil oben links */
+.funfact-bubble::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(255, 255, 255, 0.2);
+}
+
+
+
 /* Header/Blog Title */
 .header {
   padding: 30px;
@@ -33,6 +76,7 @@ body {
   -webkit-background-clip: text; /* Text-Clip für Farbverlauf */
   color: transparent; /* Textfarbe unsichtbar, damit der Farbverlauf durchscheint */
   text-align: left;
+  display: inline-block;
   margin-bottom: 0px;
   margin-top: 0;
 
@@ -88,6 +132,10 @@ body {
   padding-bottom: 0; /* Entfernt unerwünschtes Padding */
 }
 
+strong {
+  font-weight: bold;
+}
+
 h4 {
   margin-bottom: 0;
 }
@@ -119,6 +167,11 @@ h4 {
   color: #ffffff;
   margin-left: 10px;
 }
+
+.emoji {
+  color: initial; /* Setzt die Farbe zurück auf Standard */
+}
+
 
 .intro {
   font-weight: bold;
@@ -160,14 +213,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-#Logo {
-  background: linear-gradient(to right, #00ff0d, #00eeff, #d400ff); /* Farbverlauf von links nach rechts */
-  -webkit-background-clip: text; /* Text-Clip für Farbverlauf */
-  color: transparent; /* Textfarbe unsichtbar, damit der Farbverlauf durchscheint */
-  font-weight: 900;
-  padding-top: 11px;
-}
-
 /* Style the top navigation bar */
 .topnav {
   position: sticky; /* Bleibt beim Scrollen sichtbar */
@@ -184,7 +229,7 @@ h2 {
 }
 
 /* Style the topnav links */
-.topnav a {
+.topnav a, .footer a {
   display: inline-block;
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
@@ -196,7 +241,7 @@ h2 {
   transition: color 0.5s ease; /* Übergangseffekt für die Farbe */
 }
 
-.topnav a:hover {
+.topnav a:hover, .footer a:hover {
   color: #00FF3A;
   /*color: #CCCCCC;*/
 }
@@ -205,6 +250,30 @@ h2 {
 .topnav a.active {
   color: #00FF3A;
 }
+
+.page-note {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #00ff88;
+  padding: 12px 16px;
+  margin: 20px 0;
+  font-size: 0.95rem;
+  color: #ccc;
+  font-style: italic;
+  border-radius: 8px;
+  animation: fadeInNote 0.8s ease forwards;
+}
+
+@keyframes fadeInNote {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 .project-section {
@@ -315,7 +384,7 @@ border-top-right-radius: 10px;
 
 #img4 {
   background-image: 
-  linear-gradient(to bottom right, rgba(30, 128, 0, 0.7), rgba(0, 139, 42, 0.7)),
+  linear-gradient(to bottom right, rgba(0, 128, 6, 0.7), rgba(0, 139, 58, 0.7)),
     url(images/frond_end_thumbnail.jpg);
   background-size: cover;
   background-position: center;       /* Zentriert das Bild im Container */
@@ -520,6 +589,40 @@ border-top-right-radius: 10px;
   /*color: #FFF;*/
   padding-right: 10px;
 }
+
+
+.funfact-section {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.1);
+  transition: background 0.3s ease;
+}
+
+.funfact-text {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.highlighted-word {
+  color: #00ff88;
+  font-weight: bold;
+  position: relative;
+  animation: waveGlow 4s infinite ease-in-out;
+}
+
+/* Leichte leuchtende Animation */
+@keyframes waveGlow {
+  0%   { text-shadow: 0 0 4px #00ff88; }
+  50%  { text-shadow: 0 0 14px #00ff88; }
+  100% { text-shadow: 0 0 4px #00ff88; }
+}
+
+
+
+
+
 
 /* Responsive Anpassungen */
 @media screen and (max-width: 768px) {

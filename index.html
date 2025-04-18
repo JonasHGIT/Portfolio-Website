@@ -8,7 +8,7 @@
   <meta name="author" content="Jonas Hammer" />
   <title>Portfolio | Jonas Hammer</title>
   
-  <link rel="icon" type="image/png" sizes="32x32" href="images/retro.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Alex+Brush&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -17,24 +17,33 @@
 
     <nav class="topnav">
       <a href="index.html" class="active">Home</a>
-      <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About Me</a>
-      <a href="contact.html">Contact</a>
-      <a href="resume.html">Resume</a>
     </nav>
 
     <header class="header">
       <div class="intro-animation">
         <div class="intro-container">
           <h2 class="intro">Hey, I'm</h2>
-          <h1 class="name1">Jonas</h1>
+          <h1 class="name1">Jonas<span class="emoji">👋</span></h1>
+          <div class="funfact-wrapper">
+            <p class="funfact-bubble" id="funfact">✨ ...Es läuft. Du bist da. Ich bin da. Und keiner weiß so richtig, wie das möglich ist – aber reden wir nicht drüber...</p>
+          </div>          
+          
         </div>
-        <h3>I am a Media Technology student with a curiosity for immersive media, interactive design, and innovative user experiences.</h3>
+        <div class="project-section">
+        <h3>
+          Als Medientechnik-Student mit Interesse an <strong>interaktiven Medien</strong>, <strong>kreativen Workflows</strong> und <strong>technischer Umsetzung</strong> suche ich ein spannendes <strong>Praxissemester</strong>.  
+          Auf dieser Seite zeige ich einige meiner bisherigen Projekte – von ersten <strong>Unity-Prototypen</strong> bis hin zu <strong>3D-Animation</strong>, <strong>Grafikdesign</strong> und <strong>Frontend-Entwicklung</strong>.<br>
+          Ich möchte echte Erfahrungen sammeln, mich weiterentwickeln und freue mich darauf, <strong>mit Ihnen zusammenzuarbeiten</strong>.
+        </h3>
+      </div>
       </div>
     </header>
 
+    <p class="page-note">⚠️ Diese Seite wird derzeit überarbeitet – Inhalte und Projekte werden laufend ergänzt.</p>
+
     <section class="article">
-      <h2>Featured Projects</h2>
+      <h2><strong>Featured Projects 👀</strong></h2>
       <!--<h3>Title description, Dec 7, 2017</h3>
 
       <!-- Cards 
@@ -61,7 +70,7 @@
           <div class="card-content">
             <div class="text-block">
               <h4>MMORPG-INSPIRED GAME PROTOTYPE</h4>
-              <h5>Unity Project, Sep 2, 2017</h5>
+              <h5>Unity Project, Working Progress</h5>
             </div>
       
             <div class="icon-block">
@@ -81,7 +90,7 @@
           <div class="card-content">
             <div class="text-block">
               <h4>PORTFOLIO WEBSITE</h4>
-              <h5>Front-End Project, Sep 2, 2017</h5>
+              <h5>Front-End Project, Working Progress</h5>
             </div>
             <div class="icon-block">
               <img src="images/html_logo.png" alt="HTML" class="icon">
@@ -100,7 +109,7 @@
           <div class="card-content">
             <div class="text-block">
               <h4>FICTIONAL "HAMMERTECH" PHONE AD CLIP</h4>
-              <h5>Blender Project, Sep 2, 2017</h5>
+              <h5>Blender Project, Finished</h5>
             </div>
             <div class="icon-block">
               <img src="images/blender_logo.png" alt="Blender" class="icon">
@@ -116,7 +125,7 @@
           <div class="card-content">
             <div class="text-block">
               <h4>FICTIONAL "WITHSTANDING" MOVIE POSTER</h4>
-              <h5>Photoshop Project, Sep 2, 2017</h5>
+              <h5>Photoshop Project, Finished</h5>
             </div>
             <div class="icon-block">
               <img src="images/photoshop_logo.png" alt="Photoshop" class="icon">
@@ -128,12 +137,15 @@
     </section>
 
     <footer class="footer">
-      <h3>Build with ❤️ by Jonas</h3>
-      <h3>|</h3>
-      <h3>2024</h3>
-      <h3>|</h3>
-      <h3>Footer</h3>
-    </footer>
+        <h3>Build with ❤️ by Jonas</h3>
+        <h3>|</h3>
+        <h3>2025</h3>
+        <h3>|</h3>
+        <h3>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de">jonas.hammer@stud.hs-emden-leer.de</a></h3>
+        <h3>|</h3>
+        <h3>Follow me on <a href="https://github.com/JonasHGIT">GitHub</a></h3>
+      </footer>
+      
 
   </div>
 
@@ -146,5 +158,24 @@
       });
     });
   </script>
+  <script>
+    const funfacts = [
+      "✨ ...Es läuft. Du bist da. Ich bin da. Und keiner weiß so richtig, wie das möglich ist – aber reden wir nicht drüber...",
+      "🕹️  ...ja, ich hab mich lieber hiermit beschäftigt, während ich die wirklich wichtigen Bugs gekonnt übersehe...",
+      "🎹 ...*hört vielleicht gerade Klaviermusik oder sitzt selber vor einem*...",
+      "🧃 ...*scheitert gerade daran, den Strohhalm in das Tetrapack zu pieken*...",
+      "🙃 ...ok Ich baue erstmal alles quick & dirty, und refactor dann einfach später - Oh ich hab ja Besuch...",
+    ];
+  
+    let factIndex = 0;
+    const funfactEl = document.getElementById("funfact");
+  
+    setInterval(() => {
+      factIndex = (factIndex + 1) % funfacts.length;
+      funfactEl.textContent = funfacts[factIndex];
+    }, 12000);
+  </script>
+  
+  
 </body>
 </html>
