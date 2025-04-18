@@ -229,7 +229,7 @@ h2 {
 }
 
 /* Style the topnav links */
-.topnav a, .footer a {
+.topnav a, .footer a, .project-section a {
   display: inline-block;
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
@@ -241,7 +241,7 @@ h2 {
   transition: color 0.5s ease; /* Übergangseffekt für die Farbe */
 }
 
-.topnav a:hover, .footer a:hover {
+.topnav a:hover, .footer a:hover, .project-section a:hover {
   color: #00FF3A;
   /*color: #CCCCCC;*/
 }
@@ -273,6 +273,43 @@ h2 {
     transform: translateY(0);
   }
 }
+
+/* Flexbox Container für den Text und Button */
+.inline-container {
+  display: flex;
+  align-items: center;  /* Vertikale Ausrichtung der Elemente */
+  justify-content: flex-start; /* Button wird nach rechts ausgerichtet */
+  margin-top: 20px;
+}
+
+.inline-text {
+  margin-right: 20px;  /* Etwas Abstand zwischen dem Text und dem Button */
+}
+
+.cta-button {
+  display: inline-block;
+}
+
+.button-link {
+  background-color: #00FF3A; /* Helles Grün */
+  color: white; /* Schriftfarbe weiß */
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;  /* Verhindert das Umbrechen des Textes */
+  text-align: center;   /* Text innerhalb des Buttons wird zentriert */
+}
+
+.button-link:hover {
+  background-color: #00e633; /* Etwas dunkleres Grün bei Hover */
+}
+
+
+
+
 
 
 
