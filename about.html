@@ -19,15 +19,54 @@
     <a href="about.html" class="active">About Me</a>
   </div>
 
-  <div class="header">
+  <header class="header">
     <div class="intro-animation">
       <div class="intro-container">
-        <h2 class="intro">Hey, I'm</h2>
-        <h1 class="name1">Jonas<span class="emoji">👋</span></h1>
-      </div>    
-      <h3>Ich studiere Medientechnik mit Fokus auf immersive Medien, kreative Workflows und technische Umsetzung.</h3>
+        <h2 class="intro">Hey, ich bin</h2>
+        <h1 class="name1">
+          <span class="letter">J</span>
+          <span class="letter">o</span>
+          <span class="letter">n</span>
+          <span class="letter">a</span>
+          <span class="letter">s</span>
+
+          <span class="letter"> </span> <!-- Leerzeichen -->
+
+          <span class="letter">H</span>
+          <span class="letter">a</span>
+          <span class="letter">m</span>
+          <span class="letter">m</span>
+          <span class="letter">e</span>
+          <span class="letter">r</span>
+          <span class="letter emoji">🔨</span>
+
+        </h1>
+        
+        <div class="funfact-wrapper">
+          <p class="funfact-bubble" id="funfact">✨ ...Es läuft. Du bist da. Ich bin da. Und keiner weiß so richtig, wie das möglich ist – aber reden wir nicht drüber...</p>
+        </div>          
+        
+      </div>
+      <div class="project-section">
+        <h3>
+          Als Medientechnik-Student mit Interesse an <strong>interaktiven Medien</strong>, <strong>kreativen Workflows</strong> und <strong>technischer Umsetzung</strong> suche ich ein spannendes <strong>Praxissemester</strong>.  
+          Auf dieser Seite zeige ich einige meiner bisherigen Projekte – von ersten <strong>Unity-Prototypen</strong> bis hin zu <strong>3D-Animation</strong>, <strong>Grafikdesign</strong> und <strong>Frontend-Entwicklung</strong>.<br>
+        </h3>
+        
+        <!-- Flexbox Container für den Text und Button -->
+        <div class="inline-container">
+          <h3 class="inline-text">
+            Ich möchte echte Erfahrungen sammeln, mich weiterentwickeln und freue mich darauf, <strong>mit Ihnen zusammenzuarbeiten</strong>.
+          </h3>
+      
+          <!-- Call to Action Button -->
+          <div class="cta-button">
+            <a href="mailto:jonas.hammer@stud.hs-emden-leer.de" style="color: rgb(32, 32, 32); font-weight: bold;" class="button-link">Lass uns zusammenarbeiten!</a>
+          </div>
+        </div>
+      </div>   
     </div>
-  </div>
+  </header>
   
   <p class="page-note">⚠️ Diese Seite wird derzeit überarbeitet – Inhalte und Projekte werden laufend ergänzt.</p>
 
@@ -59,10 +98,6 @@
       Ich möchte nicht nur kreativ sein, sondern auch technische Lösungen entwickeln, die einen echten Mehrwert schaffen. Mein Ziel ist es, in einem interdisziplinären Umfeld zu arbeiten, in dem Design und Technologie Hand in Hand gehen.  
       Langfristig strebe ich an, Projekte zu leiten, die sowohl ästhetisch als auch funktional begeistern – und dabei immer wieder neue Technologien und Methoden auszuprobieren.
     </p>
-    <p>
-      Ich glaube, man lernt am meisten, wenn man sich traut, loszulegen – auch wenn’s am Anfang noch chaotisch ist.  
-      Wenn etwas funktioniert, ist’s cool. Wenn nicht, hab ich wenigstens was daraus mitgenommen.
-    </p>
   </div>
   
   <div class="project-section">
@@ -77,7 +112,7 @@
   <div class="project-section">
     <h2>🌱 Persönliche Interessen</h2>
     <p>
-      Abgesehen von meinen Studien- und Projektarbeiten interessiere ich mich auch für Musik, Psychologie, Ästhetik und Gaming. Besonders spiele ich gerne Klavier, was mir hilft, kreativ zu bleiben und neue Ideen zu entwickeln.  
+      Abgesehen von meinen Studien- und Projektarbeiten interessiere ich mich auch für Musik, Psychologie, Ästhetik und Gaming.
       Diese Hobbys tragen dazu bei, meine Denkweise zu erweitern und frische Perspektiven in meine Arbeit zu integrieren.
     </p>
   </div>
@@ -87,8 +122,8 @@
     <p>
       Du hast eine Idee, ein Projekt oder Feedback? Ich freue mich über jede Nachricht!
       <br><br>
-      <strong>E-Mail:</strong> <a href="mailto:jonas.hammer@stud.hs-emden-leer.de">jonas.hammer@stud.hs-emden-leer.de</a><br>
-      <strong>GitHub:</strong> <a href="https://github.com/JonasHGIT">GitHub</a><br>
+      <strong>E-Mail:</strong> <a href="mailto:jonas.hammer@stud.hs-emden-leer.de" style="font: inherit;">jonas.hammer@stud.hs-emden-leer.de</a><br>
+      <strong>GitHub:</strong> <a href="https://github.com/JonasHGIT" style="font: inherit;">GitHub</a><br>
     </p>
   </div>
   
@@ -105,12 +140,31 @@
     <h3>|</h3>
     <h3>2025</h3>
     <h3>|</h3>
-    <h3>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de">jonas.hammer@stud.hs-emden-leer.de</a></h3>
+    <h3>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de" style="font: inherit;">jonas.hammer@stud.hs-emden-leer.de</a></h3>
     <h3>|</h3>
-    <h3>Follow me on <a href="https://github.com/JonasHGIT">GitHub</a></h3>
+    <h3><a href="https://github.com/JonasHGIT" style="font: inherit;">GitHub</a></h3>
   </footer>
   </div>
 </div>
+
+<script>
+  const funfacts = [
+    "✨ ...Es läuft. Du bist da. Ich bin da. Und keiner weiß so richtig, wie das möglich ist – aber reden wir nicht drüber...",
+    "🕹️  ...ja, ich hab mich lieber hiermit beschäftigt, während ich die wirklich wichtigen Bugs gekonnt übersehe...",
+    "🎹 ...*hört vielleicht gerade Klaviermusik oder sitzt selber vor einem*...",
+    "🧃 ...*scheitert gerade daran, den Strohhalm in das Tetrapack zu pieken*...",
+    "🙃 ...ok Ich baue erstmal alles quick & dirty, und refactor dann einfach später - Oh ich hab ja Besuch...",
+  ];
+
+  let factIndex = 0;
+  const funfactEl = document.getElementById("funfact");
+
+  setInterval(() => {
+    factIndex = (factIndex + 1) % funfacts.length;
+    funfactEl.textContent = funfacts[factIndex];
+  }, 12000);
+</script>
+
 </body>
 </html>
 

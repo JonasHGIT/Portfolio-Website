@@ -72,9 +72,7 @@ body {
 
 .header h1 {
   font-size: 66px;
-  background: linear-gradient(to right, #00ff0d, #00ff88); /* Farbverlauf von links nach rechts */
-  -webkit-background-clip: text; /* Text-Clip für Farbverlauf */
-  color: transparent; /* Textfarbe unsichtbar, damit der Farbverlauf durchscheint */
+  color: #00ff0d; 
   text-align: left;
   display: inline-block;
   margin-bottom: 0px;
@@ -160,12 +158,23 @@ h4 {
   display: inline;
 }
 
-/* Optional: Formatierungen für die h1- und h2-Tags */
 .name1 {
   font-size: 32px;
   font-weight: bold;
   color: #ffffff;
   margin-left: 10px;
+  display: flex;
+}
+
+.letter {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  cursor: default;
+  margin-left: -15px;
+}
+
+.letter:hover {
+  transform: translateY(-8px);
 }
 
 .emoji {
@@ -173,9 +182,27 @@ h4 {
 }
 
 
+/* Orange Style für "Blender" */
+.orange {
+  color: orange;
+}
+
+.white {
+  color: white;
+}
+
+.blue {
+  color: #0059ff;
+}
+
+.purple{
+  color: purple;
+}
+
 .intro {
   font-weight: bold;
   color: #ffffff;
+  margin-right: 10px;
 }
 
 /* Stil für die Intro-Animation */

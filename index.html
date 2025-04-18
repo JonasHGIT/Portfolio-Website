@@ -23,11 +23,19 @@
     <header class="header">
       <div class="intro-animation">
         <div class="intro-container">
-          <h2 class="intro">Hey, I'm</h2>
-          <h1 class="name1">Jonas<span class="emoji">👋</span></h1>
-          <div class="funfact-wrapper">
-            <p class="funfact-bubble" id="funfact">✨ ...Es läuft. Du bist da. Ich bin da. Und keiner weiß so richtig, wie das möglich ist – aber reden wir nicht drüber...</p>
-          </div>          
+          <h2 class="intro">Willkommen zu meinem</h2>
+          <h1 class="name1">
+            <span class="letter">P</span>
+            <span class="letter">o</span>
+            <span class="letter">r</span>
+            <span class="letter">t</span>
+            <span class="letter">f</span>
+            <span class="letter">o</span>
+            <span class="letter">l</span>
+            <span class="letter">i</span>
+            <span class="letter">o</span>
+            <span class="letter emoji">👋</span>
+          </h1>        
           
         </div>
         <div class="project-section">
@@ -47,9 +55,7 @@
               <a href="mailto:jonas.hammer@stud.hs-emden-leer.de" style="color: rgb(32, 32, 32); font-weight: bold;" class="button-link">Lass uns zusammenarbeiten!</a>
             </div>
           </div>
-        </div>
-        
-               
+        </div>   
       </div>
     </header>
 
@@ -59,22 +65,7 @@
       <h2><strong>Featured Projects 👀</strong></h2>
       <!--<h3>Title description, Dec 7, 2017</h3>
 
-      <!-- Cards 
-      <a href="#">
-        <div class="card">
-          <div id="img1" class="fakeimg"></div>
-          <h4>AQUARIUM WEBSITE</h4>
-          <h5>UI/UX Web-Project, Sep 2, 2017</h5>
-        </div>
-      </a>
-
-      <a href="#">
-        <div class="card">
-          <div id="img2" class="fakeimg"></div>
-          <h4>MULTIMEDIA PROJECT</h4>
-          <h5>Unity Project, Sep 2, 2017</h5>
-        </div>
-      </a> -->
+      <!-- Cards -->
 
       <a href="unity_game_dev_project.html">
         <div class="card">
@@ -103,7 +94,7 @@
           <div class="card-content">
             <div class="text-block">
               <h4>PORTFOLIO WEBSITE</h4>
-              <h5>Front-End Project, Worki in Progress</h5>
+              <h5>Frontend Project, Work in Progress</h5>
             </div>
             <div class="icon-block">
               <img src="images/html_logo.png" alt="HTML" class="icon">
@@ -154,9 +145,9 @@
         <h3>|</h3>
         <h3>2025</h3>
         <h3>|</h3>
-        <h3>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de">jonas.hammer@stud.hs-emden-leer.de</a></h3>
+        <h3>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de" style="font: inherit;">jonas.hammer@stud.hs-emden-leer.de</a></h3>
         <h3>|</h3>
-        <h3>Follow me on <a href="https://github.com/JonasHGIT">GitHub</a></h3>
+        <h3><a href="https://github.com/JonasHGIT" style="font: inherit;">GitHub</a></h3>
       </footer>
       
 
@@ -170,23 +161,6 @@
         setTimeout(() => nav.classList.remove('animate-blur'), 2800);
       });
     });
-  </script>
-  <script>
-    const funfacts = [
-      "✨ ...Es läuft. Du bist da. Ich bin da. Und keiner weiß so richtig, wie das möglich ist – aber reden wir nicht drüber...",
-      "🕹️  ...ja, ich hab mich lieber hiermit beschäftigt, während ich die wirklich wichtigen Bugs gekonnt übersehe...",
-      "🎹 ...*hört vielleicht gerade Klaviermusik oder sitzt selber vor einem*...",
-      "🧃 ...*scheitert gerade daran, den Strohhalm in das Tetrapack zu pieken*...",
-      "🙃 ...ok Ich baue erstmal alles quick & dirty, und refactor dann einfach später - Oh ich hab ja Besuch...",
-    ];
-  
-    let factIndex = 0;
-    const funfactEl = document.getElementById("funfact");
-  
-    setInterval(() => {
-      factIndex = (factIndex + 1) % funfacts.length;
-      funfactEl.textContent = funfacts[factIndex];
-    }, 12000);
   </script>
   
   
