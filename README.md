@@ -19,7 +19,7 @@ Diese Website ist ein Prototyp und zeigt ausgewählte Projekte, Skills und Techn
 
 ## 📸 Vorschau
 
-![Screenshot der Portfolio-Seite](screenshots/screenshot_home.png)  
+![Screenshot der Portfolio-Seite](screenshots/screenshot_home.PNG)  
 
 ---
 
