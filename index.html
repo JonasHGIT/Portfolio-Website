@@ -140,18 +140,36 @@
       
     </section>
 
-    <footer class="footer">
-        <h3>Build with ❤️ by Jonas</h3>
-        <h3>|</h3>
-        <h3>2025</h3>
-        <h3>|</h3>
-        <h3>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de" style="font: inherit;">jonas.hammer@stud.hs-emden-leer.de</a></h3>
-        <h3>|</h3>
-        <h3><a href="https://github.com/JonasHGIT" style="font: inherit;">GitHub</a></h3>
-      </footer>
-      
-
+    <p class="page-note" id="footer-note">
+      ✨ Vielen Dank fürs Scrollen – hier endet die Seite (vorerst)!
+    </p>
   </div>
+  
+  <footer class="footer">
+    <div class="footer-particles">
+      <canvas id="starCanvas"></canvas>
+  
+      <div class="footer-content">
+        <p>Build with ❤️ by Jonas</p>
+        <p class="dot">•</p>
+        <p>2025</p>
+        <p class="dot">•</p>
+        <p>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de">jonas.hammer@stud.hs-emden-leer.de</a></p>
+        <p class="dot">•</p>
+        <p><a href="https://github.com/JonasHGIT">GitHub</a></p>
+      </div>
+  
+      <div class="footer-flair-block">
+        <p>Made with HTML, CSS, JS 👾</p>
+        <p>Powered by ☕, Git & too many late nights 🥱</p>
+        <p>Built without a single framework, like a madman. 🤪</p>
+        <p>Currently in beta – new stuff coming soon! 🚀</p>
+      </div>
+  
+      <div class="last-commit-blink">Last commit: 2 AM 😴</div>
+    </div>
+  </footer>
+  </body>
 
   <script>
     document.querySelectorAll('.topnav a').forEach(link => {
@@ -163,6 +181,85 @@
     });
   </script>
   
+  <script>
+    function updateBackground() {
+      const firstNote = document.querySelector('.page-note'); // erster Trenner
+      const secondNote = document.getElementById('footer-note'); // zweiter Trenner
   
-</body>
+      if (!firstNote || !secondNote) return;
+  
+      const note1Top = firstNote.offsetTop + (firstNote.offsetHeight / 2);
+      const note2Top = secondNote.offsetTop + (secondNote.offsetHeight / 2);
+  
+      document.body.style.background = `
+        linear-gradient(
+          to bottom,
+          #1f1f1f 0px,
+          #1f1f1f ${note1Top}px,
+          #111 ${note1Top}px,
+          #111 ${note2Top}px,
+          #000 ${note2Top}px,
+          #000 100%
+        )
+      `;
+    }
+  
+    window.addEventListener('load', updateBackground);
+    window.addEventListener('resize', updateBackground);
+  </script>
+  
+  
+  <script>
+    const canvas = document.getElementById('starCanvas');
+    const ctx = canvas.getContext('2d');
+  
+    let stars = [];
+    const numStars = 80;
+  
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+  
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5 + 0.5,
+          speed: Math.random() * 0.5 + 0.2,
+          opacity: Math.random(),
+        });
+      }
+    }
+  
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fill();
+  
+        // update
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      }
+      requestAnimationFrame(drawStars);
+    }
+  
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initStars();
+    });
+  
+    resizeCanvas();
+    initStars();
+    drawStars();
+  </script>
+
 </html>

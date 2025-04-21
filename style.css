@@ -3,12 +3,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
-body {
+/*body {
   background: linear-gradient(264deg, rgba(18, 18, 18, 1) 0%, rgba(33, 33, 33, 1) 49%, rgba(18, 18, 18, 1) 100%);
-  /*background-image: url(images/planet.jpg);
-  background-size: cover;
-  backdrop-filter: blur(5px); /* Milchglas-Effekt */
+  /*backdrop-filter: blur(5px); /* Milchglas-Effekt */
+/*}*/
 
+body {
+  margin: 0;
+  background: #1f1f1f; /* Fallback */
+  transition: background 0.3s ease;
 }
 
 .body_content {
@@ -72,39 +75,12 @@ body {
 
 .header h1 {
   font-size: 66px;
-  color: #00ff0d; 
+  color: #00ff99; 
   text-align: left;
   display: inline-block;
   margin-bottom: 0px;
   margin-top: 0;
-
-  /* Grund-Glow-Effekt *//*
-  text-shadow: 
-    0 0 10px rgba(0, 255, 136, 0.8),
-    0 0 20px rgba(0, 255, 136, 0.6),
-    0 0 30px rgba(0, 255, 136, 0.4),
-    0 0 40px rgba(0, 255, 136, 0.2);
-  
-  /* Animation *//*
-  animation: glowPulse 3s ease-in; /* Animationsdauer und Richtung */
-}/*
-
-@keyframes glowPulse {
-  100% {
-    text-shadow: 
-      0 0 10px rgba(0, 255, 136, 0.8),
-      0 0 20px rgba(0, 255, 136, 0.6),
-      0 0 30px rgba(0, 255, 136, 0.4),
-      0 0 40px rgba(0, 255, 136, 0.2);
-  }
-  0% {
-    text-shadow: 
-      0 0 5px rgba(0, 255, 136, 0.2),
-      0 0 10px rgba(0, 255, 136, 0.1),
-      0 0 15px rgba(0, 255, 136, 0.05),
-      0 0 20px rgba(0, 255, 136, 0.03);
-  }
-}*/
+}
 
 
 
@@ -269,18 +245,18 @@ h2 {
 }
 
 .topnav a:hover, .footer a:hover, .project-section a:hover {
-  color: #00FF3A;
+  color: #00ff99;
   /*color: #CCCCCC;*/
 }
 
 /* Aktive Farbe */
 .topnav a.active {
-  color: #00FF3A;
+  color: #00ff99;
 }
 
 .page-note {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-left: 4px solid #00ff88;
+  background-color: #303030;
+  border-left: 4px solid #00ff99;
   padding: 12px 16px;
   margin: 20px 0;
   font-size: 0.95rem;
@@ -317,22 +293,40 @@ h2 {
   display: inline-block;
 }
 
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(0, 255, 153, 0);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(0, 255, 153, 0.5), 0 0 24px rgba(0, 255, 153, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(0, 255, 153, 0);
+  }
+}
+
 .button-link {
-  background-color: #00FF3A; /* Helles Grün */
-  color: white; /* Schriftfarbe weiß */
+  background-color: #00ff99;
+  color: white;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;  /* Verhindert das Umbrechen des Textes */
-  text-align: center;   /* Text innerhalb des Buttons wird zentriert */
+  white-space: nowrap;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: pulseGlow 3s ease-in-out infinite;
 }
 
 .button-link:hover {
-  background-color: #00e633; /* Etwas dunkleres Grün bei Hover */
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.5), 0 0 24px rgba(0, 255, 153, 0.2);
+  transform: translateY(-1px);
+  animation: none; /* Puls auf Hover pausieren und statisch leuchten */
+  cursor: pointer;
 }
+
+
 
 
 
@@ -373,6 +367,94 @@ h2 {
   padding-left: 0;
   list-style-type: '🔹 ';
 }
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.image-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-caption {
+  color: #ddd;
+  margin-top: 12px;
+  font-size: 1rem;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+}
+
+.project-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ccc;
+  margin: 10px 0;
+}
+
+.project-badge.private {
+  background-color: rgba(0, 123, 255, 0.2);
+  color: #77c3ff;
+}
+
+.project-badge.study {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #85e3b8;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
 
 
@@ -633,59 +715,87 @@ border-top-right-radius: 10px;
   clear: both;
 }
 
-/* Footer */
 .footer {
-  padding: 20px;
-  /*background-image: radial-gradient(circle, #8100FF, #AA00FF);*/
-  background-color: #111111;
-  /*background: linear-gradient(to right, #00ff0d, #00ff88); /* Farbverlauf von links nach rechts */
-  margin-top: 20px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Heller, schmaler Rand */
-  display: flex;               /* Flexbox aktivieren */
-  flex-direction: row;      /* Elemente in einer Zeile anordnen */
-  align-items: center;         /* Elemente zentrieren */
-  text-align: center;
-}
-
-.footer h3, 
-.footer h2 {
-  /*color: #FFF;*/
-  padding-right: 10px;
-}
-
-
-.funfact-section {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 0 12px rgba(0, 255, 136, 0.1);
-  transition: background 0.3s ease;
-}
-
-.funfact-text {
-  font-size: 1.1rem;
-  color: #ccc;
-  line-height: 1.6;
-}
-
-.highlighted-word {
-  color: #00ff88;
-  font-weight: bold;
   position: relative;
-  animation: waveGlow 4s infinite ease-in-out;
+  width: 100%;
+  color: #ccc;
+  padding: 40px 20px 80px;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Leichte leuchtende Animation */
-@keyframes waveGlow {
-  0%   { text-shadow: 0 0 4px #00ff88; }
-  50%  { text-shadow: 0 0 14px #00ff88; }
-  100% { text-shadow: 0 0 4px #00ff88; }
+.footer-particles {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
+#starCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
 
+.footer-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+}
 
+.footer-content .dot {
+  color: #555;
+  font-size: 1rem;
+}
 
+.footer-content a {
+  color: #00ff99;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.footer-flair-block {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #999;
+  text-align: left;
+  padding-left: 12px;
+  border-left: 2px solid #00ff99;
+}
+
+.last-commit-blink {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 0.75rem;
+  color: #777;
+  font-style: italic;
+  animation: blink 1.2s infinite ease-in-out;
+  z-index: 3;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
 
 
 /* Responsive Anpassungen */

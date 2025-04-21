@@ -72,7 +72,7 @@
 
   <h1 style="color: white;">🧍‍♂️ Über mich</h1>
 
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>👋 Wer ich bin</h2>
     <p>
       Ich bin Jonas – Medientechnik-Student mit einem Hang zu durchdachtem Design, technischen Spielplätzen und Projekten, die irgendwo zwischen Idee und Funktion tanzen.  
@@ -80,7 +80,7 @@
     </p>
   </div>
   
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>🎓 Mein Studium</h2>
     <p>
       Ich studiere <strong>Medientechnik (B.Eng.)</strong> an der Hochschule Emden/Leer mit der Vertiefung <strong>Computer Aided Media Production (CAMP)</strong>.  
@@ -92,7 +92,7 @@
     </p>
   </div>
   
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>🎯 Meine Ziele</h2>
     <p>
       Ich möchte nicht nur kreativ sein, sondern auch technische Lösungen entwickeln, die einen echten Mehrwert schaffen. Mein Ziel ist es, in einem interdisziplinären Umfeld zu arbeiten, in dem Design und Technologie Hand in Hand gehen.  
@@ -100,7 +100,7 @@
     </p>
   </div>
   
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>💡 Meine Stärken</h2>
     <p>
       Neben meinen technischen Kenntnissen bringe ich auch eine starke Problemlösungsfähigkeit, Teamgeist und Kommunikationsgeschick mit. Ich arbeite gern selbstständig, schätze jedoch auch den Austausch mit anderen, um neue Perspektiven zu gewinnen und kreative Lösungen zu finden.
@@ -109,7 +109,7 @@
     </p>
   </div>
   
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>🌱 Persönliche Interessen</h2>
     <p>
       Abgesehen von meinen Studien- und Projektarbeiten interessiere ich mich auch für Musik, Psychologie, Ästhetik und Gaming.
@@ -117,7 +117,7 @@
     </p>
   </div>
   
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>📬 Kontakt</h2>
     <p>
       Du hast eine Idee, ein Projekt oder Feedback? Ich freue mich über jede Nachricht!
@@ -127,7 +127,7 @@
     </p>
   </div>
   
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>📄 Lebenslauf als PDF</h2>
     <div style="display: flex; justify-content: center; margin: 30px 0;">
       <iframe src="docs/Lebenslauf_2025_JonasHammer.pdf" width="100%" height="800px" style="border: none; max-width: 1200px;"></iframe>
@@ -135,17 +135,36 @@
   </div>
   
 
-  <footer class="footer">
-    <h3>Build with ❤️ by Jonas</h3>
-    <h3>|</h3>
-    <h3>2025</h3>
-    <h3>|</h3>
-    <h3>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de" style="font: inherit;">jonas.hammer@stud.hs-emden-leer.de</a></h3>
-    <h3>|</h3>
-    <h3><a href="https://github.com/JonasHGIT" style="font: inherit;">GitHub</a></h3>
-  </footer>
-  </div>
+  <p class="page-note" id="footer-note">
+    ✨ Vielen Dank fürs Scrollen – hier endet die Seite (vorerst)!
+  </p>
 </div>
+
+<footer class="footer">
+  <div class="footer-particles">
+    <canvas id="starCanvas"></canvas>
+
+    <div class="footer-content">
+      <p>Build with ❤️ by Jonas</p>
+      <p class="dot">•</p>
+      <p>2025</p>
+      <p class="dot">•</p>
+      <p>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de">jonas.hammer@stud.hs-emden-leer.de</a></p>
+      <p class="dot">•</p>
+      <p><a href="https://github.com/JonasHGIT">GitHub</a></p>
+    </div>
+
+    <div class="footer-flair-block">
+      <p>Made with HTML, CSS, JS 👾</p>
+      <p>Powered by ☕, Git & too many late nights 🥱</p>
+      <p>Built without a single framework, like a madman. 🤪</p>
+      <p>Currently in beta – new stuff coming soon! 🚀</p>
+    </div>
+
+    <div class="last-commit-blink">Last commit: 2 AM 😴</div>
+  </div>
+</footer>
+</body>
 
 <script>
   const funfacts = [
@@ -165,7 +184,113 @@
   }, 12000);
 </script>
 
-</body>
+<script>
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach((el) => {
+      const elementTop = el.getBoundingClientRect().top;
+      const elementBottom = el.getBoundingClientRect().bottom;
+
+      const revealPoint = 100;
+
+      // Element sichtbar → aktivieren
+      if (elementTop < windowHeight - revealPoint && elementBottom > revealPoint) {
+        el.classList.add("active");
+      }
+      // Element nicht mehr sichtbar → deaktivieren
+      else {
+        el.classList.remove("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+</script>
+
+<script>
+  function updateBackground() {
+    const firstNote = document.querySelector('.page-note'); // erster Trenner
+    const secondNote = document.getElementById('footer-note'); // zweiter Trenner
+
+    if (!firstNote || !secondNote) return;
+
+    const note1Top = firstNote.offsetTop + (firstNote.offsetHeight / 2);
+    const note2Top = secondNote.offsetTop + (secondNote.offsetHeight / 2);
+
+    document.body.style.background = `
+      linear-gradient(
+        to bottom,
+        #1f1f1f 0px,
+        #1f1f1f ${note1Top}px,
+        #111 ${note1Top}px,
+        #111 ${note2Top}px,
+        #000 ${note2Top}px,
+        #000 100%
+      )
+    `;
+  }
+
+  window.addEventListener('load', updateBackground);
+  window.addEventListener('resize', updateBackground);
+</script>
+
+
+<script>
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let stars = [];
+  const numStars = 80;
+
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5 + 0.5,
+        speed: Math.random() * 0.5 + 0.2,
+        opacity: Math.random(),
+      });
+    }
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let star of stars) {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+      ctx.fill();
+
+      // update
+      star.y += star.speed;
+      if (star.y > canvas.height) {
+        star.y = 0;
+        star.x = Math.random() * canvas.width;
+      }
+    }
+    requestAnimationFrame(drawStars);
+  }
+
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    initStars();
+  });
+
+  resizeCanvas();
+  initStars();
+  drawStars();
+</script>
+
 </html>
 
 

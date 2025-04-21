@@ -68,14 +68,37 @@
 
   <p class="page-note">⚠️ Diese Seite wird derzeit überarbeitet – Inhalte und Projekte werden laufend ergänzt.</p>
 
-  <h1 style="color: white;">🎮 Projekt: Unity Fantasy Prototyp</h1>
+  <h1 style="color: white;">🎮 Projekt: Unity Fantasy Prototyp <span class="project-badge private">Privates Projekt</span></h1>
   <p style="color: #ccc;">
     <strong>Status:</strong> Früher Prototyp, Work in Progress<br>
-    <strong>Technologien:</strong> Unity, C#, Scriptable Objects, Shader Graph<br>
+    <strong>Technologien:</strong> Unity, C#, Scriptable Objects, Shader Graph, GitHub<br>
     <strong>Ziel:</strong> Erste Erfahrungen mit Game-Development sammeln – Gameplay-Mechaniken, UI, RPG-Systeme, Crafting & World-Interaktion
   </p>
 
-  <div class="project-section">
+  <div class="project-section reveal">
+    <h2>🖼️ Galerie: Screenshots & Features</h2>
+    <p>Einblicke in verschiedene System-Elemente, UI-Komponenten und den Prototypen in Aktion:</p>
+  
+    <div class="image-gallery">
+      <img src="images/berg_fluss.jpg" alt="Gameplay Screenshot 1" onclick="openModal(this)">
+      <img src="images/berg_fluss.jpg" alt="Crafting UI" onclick="openModal(this)">
+      <img src="images/berg_fluss.jpg" alt="Skilltree Konzept" onclick="openModal(this)">
+      <img src="images/berg_fluss.jpg" alt="World Interaction" onclick="openModal(this)">
+      <img src="images/berg_fluss.jpg" alt="Player UI" onclick="openModal(this)">
+    </div>
+  </div>
+  
+    <!-- Modal Viewer -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content">
+      <img id="modal-img" src="" alt="">
+      <p id="modal-caption" class="modal-caption"></p>
+    </div>
+  </div>
+
+  
+
+  <div class="project-section reveal">
     <h2>🌱 Was war meine Motivation?</h2>
     <p>
       Ich wollte herausfinden, wie komplexere Game-Systeme zusammenhängen – und was alles nötig ist, um ein kleines Fantasy-Game auf die Beine zu stellen. 
@@ -83,7 +106,7 @@
     </p>
   </div>
 
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>🛠️ Was ich umgesetzt habe</h2>
     <p>Trotz Prototyp-Status habe ich mehrere Spielsysteme entwickelt, die bereits grob miteinander funktionieren:</p>
     <ul>
@@ -96,14 +119,14 @@
     </ul>
   </div>
 
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>🧩 Scriptable Objects</h2>
     <p>
       Ich habe Unitys Scriptable Objects genutzt, um Items, Skills und Crafting-Rezepte modular und flexibel zu gestalten – das ermöglicht eine einfache Erweiterbarkeit und bessere Datenverwaltung.
     </p>
   </div>
 
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>🔍 Was ich gelernt habe</h2>
     <ul>
       <li>Wie man größere Game-Logik modular strukturiert</li>
@@ -113,29 +136,49 @@
     </ul>
   </div>
 
-  <div class="project-section">
+  <div class="project-section reveal">
     <h2>📈 Was würde ich als Nächstes tun?</h2>
     <ul>
-      <li>Game-Loop entwickeln (Ziel, Fortschritt, Save-System)</li>
-      <li>UI-Feinschliff, Audio, SFX</li>
-      <li>Visual FX mit Shader Graph</li>
-      <li>Mehr Polishing für Gameplay-Feedback</li>
+      <li>Game-Loop entwickeln (Ziel, Fortschritt, Save-System, Missionen/Aufgaben/Quests)</li>
+      <li>UI-Feinschliff, Audio, SFX, VFX (evtl. Animationen, NPC-Models adden)</li>
+      <li>RPG-Systeme und Crafting-Systeme verbessern (Characterauswahl, Skilltree, NPC-Interaktionen, evtl. Crafting-Rezepte)</li>
+      <li>Mehr Polishing für Gameplay-Feedback (Popups, Feedback-Panels)</li>
+      <li>Hauptmenü Screen und weitere Szenen erstellen</li>
+      <li>Allgemeines Bugfixing und Fehlerbehebung (im Gameplay und UI)</li>
+      <li>Code Refactoring und Modularisierung (bessere Wartung und Erweiterbarkeit)</li>
     </ul>
   </div>
 
-
-
-
-  <footer class="footer">
-    <h3>Build with ❤️ by Jonas</h3>
-    <h3>|</h3>
-    <h3>2025</h3>
-    <h3>|</h3>
-    <h3>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de" style="font: inherit;">jonas.hammer@stud.hs-emden-leer.de</a></h3>
-    <h3>|</h3>
-    <h3><a href="https://github.com/JonasHGIT" style="font: inherit;">GitHub</a></h3>
-  </footer>
+  
+  <p class="page-note" id="footer-note">
+    ✨ Vielen Dank fürs Scrollen – hier endet die Seite (vorerst)!
+  </p>
 </div>
+
+<footer class="footer">
+  <div class="footer-particles">
+    <canvas id="starCanvas"></canvas>
+
+    <div class="footer-content">
+      <p>Build with ❤️ by Jonas</p>
+      <p class="dot">•</p>
+      <p>2025</p>
+      <p class="dot">•</p>
+      <p>Get in touch: <a href="mailto:jonas.hammer@stud.hs-emden-leer.de">jonas.hammer@stud.hs-emden-leer.de</a></p>
+      <p class="dot">•</p>
+      <p><a href="https://github.com/JonasHGIT">GitHub</a></p>
+    </div>
+
+    <div class="footer-flair-block">
+      <p>Made with HTML, CSS, JS 👾</p>
+      <p>Powered by ☕, Git & too many late nights 🥱</p>
+      <p>Built without a single framework, like a madman. 🤪</p>
+      <p>Currently in beta – new stuff coming soon! 🚀</p>
+    </div>
+
+    <div class="last-commit-blink">Last commit: 2 AM 😴</div>
+  </div>
+</footer>
 </body>
 
 <script>
@@ -151,6 +194,129 @@
     });
   });
 </script>
+
+<script>
+  function openModal(img) {
+    const modalImg = document.getElementById("modal-img");
+    const modalCaption = document.getElementById("modal-caption");
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modalCaption.textContent = img.alt; // Hier wird die Bildunterschrift gesetzt
+    document.getElementById("modal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+</script>
+
+<script>
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach((el) => {
+      const elementTop = el.getBoundingClientRect().top;
+      const elementBottom = el.getBoundingClientRect().bottom;
+
+      const revealPoint = 100;
+
+      // Element sichtbar → aktivieren
+      if (elementTop < windowHeight - revealPoint && elementBottom > revealPoint) {
+        el.classList.add("active");
+      }
+      // Element nicht mehr sichtbar → deaktivieren
+      else {
+        el.classList.remove("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+</script>
+
+<script>
+  function updateBackground() {
+    const firstNote = document.querySelector('.page-note'); // erster Trenner
+    const secondNote = document.getElementById('footer-note'); // zweiter Trenner
+
+    if (!firstNote || !secondNote) return;
+
+    const note1Top = firstNote.offsetTop + (firstNote.offsetHeight / 2);
+    const note2Top = secondNote.offsetTop + (secondNote.offsetHeight / 2);
+
+    document.body.style.background = `
+      linear-gradient(
+        to bottom,
+        #1f1f1f 0px,
+        #1f1f1f ${note1Top}px,
+        #111 ${note1Top}px,
+        #111 ${note2Top}px,
+        #000 ${note2Top}px,
+        #000 100%
+      )
+    `;
+  }
+
+  window.addEventListener('load', updateBackground);
+  window.addEventListener('resize', updateBackground);
+</script>
+
+
+<script>
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let stars = [];
+  const numStars = 80;
+
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5 + 0.5,
+        speed: Math.random() * 0.5 + 0.2,
+        opacity: Math.random(),
+      });
+    }
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let star of stars) {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+      ctx.fill();
+
+      // update
+      star.y += star.speed;
+      if (star.y > canvas.height) {
+        star.y = 0;
+        star.x = Math.random() * canvas.width;
+      }
+    }
+    requestAnimationFrame(drawStars);
+  }
+
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    initStars();
+  });
+
+  resizeCanvas();
+  initStars();
+  drawStars();
+</script>
+
 
 
 </html>
