@@ -13,6 +13,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  
+  <!--<section class="image-background">
+    <div class="image" style="background-image: url('images/berg_fluss.jpg');"></div>
+    <div class="image" style="background-image: url('images/berg_fluss.jpg');"></div>
+    <div class="image" style="background-image: url('images/berg_fluss.jpg');"></div>
+    <div class="image" style="background-image: url('images/berg_fluss.jpg');"></div>
+  </section>-->
+  
+
   <div class="body_content">
 
     <nav class="topnav">
@@ -38,7 +47,7 @@
           </h1>        
           
         </div>
-        <div class="project-section">
+        <div class="intro-project-section">
           <h3>
             Als Medientechnik-Student mit Interesse an <strong>interaktiven Medien</strong>, <strong>kreativen Workflows</strong> und <strong>technischer Umsetzung</strong> suche ich ein spannendes <strong>Praxissemester</strong>.  
             Auf dieser Seite zeige ich einige meiner bisherigen Projekte – von ersten <strong>Unity-Prototypen</strong> bis hin zu <strong>3D-Animation</strong>, <strong>Grafikdesign</strong> und <strong>Frontend-Entwicklung</strong>.<br>
@@ -150,7 +159,7 @@
       <canvas id="starCanvas"></canvas>
   
       <div class="footer-content">
-        <p>Build with ❤️ by Jonas</p>
+        <p>Built with ❤️ by Jonas</p>
         <p class="dot">•</p>
         <p>2025</p>
         <p class="dot">•</p>
@@ -180,6 +189,32 @@
       });
     });
   </script>
+
+  <script>
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll(".reveal");
+      const windowHeight = window.innerHeight;
+  
+      reveals.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        const elementBottom = el.getBoundingClientRect().bottom;
+  
+        const revealPoint = 100;
+  
+        // Element sichtbar → aktivieren
+        if (elementTop < windowHeight - revealPoint && elementBottom > revealPoint) {
+          el.classList.add("active");
+        }
+        // Element nicht mehr sichtbar → deaktivieren
+        else {
+          el.classList.remove("active");
+        }
+      });
+    }
+  
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
   
   <script>
     function updateBackground() {
@@ -191,22 +226,34 @@
       const note1Top = firstNote.offsetTop + (firstNote.offsetHeight / 2);
       const note2Top = secondNote.offsetTop + (secondNote.offsetHeight / 2);
   
-      document.body.style.background = `
+      document.body.style.backgroundImage = `
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('images2/image37.jpg'),
         linear-gradient(
           to bottom,
-          #1f1f1f 0px,
           #1f1f1f ${note1Top}px,
           #111 ${note1Top}px,
           #111 ${note2Top}px,
-          #000 ${note2Top}px,
-          #000 100%
+          #000 ${note2Top}px
         )
       `;
+  
+      document.body.style.backgroundRepeat = 'no-repeat, no-repeat, no-repeat';
+      document.body.style.backgroundSize = `
+        ${window.innerWidth}px ${note1Top}px,
+        ${window.innerWidth}px ${note1Top}px,
+        100% 100%
+      `;
+      document.body.style.backgroundPosition = 'top, top, top';
+      document.body.style.backgroundColor = '#000';
     }
   
     window.addEventListener('load', updateBackground);
     window.addEventListener('resize', updateBackground);
   </script>
+  
+  
+  
   
   
   <script>

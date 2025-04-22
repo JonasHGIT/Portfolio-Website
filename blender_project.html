@@ -22,8 +22,8 @@
   <header class="header">
     <div class="intro-animation">
       <div class="intro-container">
-        <h2 class="intro">This is</h2>
-        <h1 class="name1">
+        <!--<h2 class="intro">This is</h2>-->
+        <h1 class="name1" style="display: block; text-align: center;">
           <!-- Jonas (in Grün) -->
           <span class="letter">J</span>
           <span class="letter">o</span>
@@ -36,18 +36,18 @@
           <span class="letter white">x</span>
           <span class="letter"> </span> <!-- Leerzeichen -->
         
-          <!-- Blender (in Orange) -->
-          <span class="letter orange">B</span>
-          <span class="letter orange">l</span>
-          <span class="letter orange">e</span>
-          <span class="letter orange">n</span>
-          <span class="letter orange">d</span>
-          <span class="letter orange">e</span>
-          <span class="letter orange">r</span>
+          <!-- Blender (in blue) -->
+          <span class="letter blue">B</span>
+          <span class="letter blue">l</span>
+          <span class="letter blue">e</span>
+          <span class="letter blue">n</span>
+          <span class="letter blue">d</span>
+          <span class="letter blue">e</span>
+          <span class="letter blue">r</span>
         </h1>         
         
       </div>
-      <div class="project-section">
+      <div class="intro-project-section">
         <h3>
           Als Medientechnik-Student mit Interesse an <strong>interaktiven Medien</strong>, <strong>kreativen Workflows</strong> und <strong>technischer Umsetzung</strong> suche ich ein spannendes <strong>Praxissemester</strong>.  
           Auf dieser Seite zeige ich einige meiner bisherigen Projekte – von ersten <strong>Unity-Prototypen</strong> bis hin zu <strong>3D-Animation</strong>, <strong>Grafikdesign</strong> und <strong>Frontend-Entwicklung</strong>.<br>
@@ -77,23 +77,27 @@
     <strong>Ziel:</strong> Einen professionell wirkenden Werbespot visualisieren und dabei 3D-Workflow üben
   </p>
 
-  <h2 style="color: white;">📱 Blender Smartphone Commercial – Video</h2>
-  <div style="display: flex; justify-content: center; align-items: center; margin: 30px 0;">
-    <video controls style="max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
-      <source src="videos/PDM_Phone_Commercial_Jonas_Hammer.mp4" type="video/mp4">
-      Dein Browser unterstützt das Video-Tag nicht.
-    </video>
+  <div class="project-section reveal">
+    <h2>🖼️ Galerie: Fertiges Produkt</h2>
+    <p>📱 Blender Smartphone Commercial – Video</p>
+
+    <div style="display: flex; justify-content: center; align-items: center; margin: 30px 0;">
+      <video controls style="max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+        <source src="videos/PDM_Phone_Commercial_Jonas_Hammer.mp4" type="video/mp4">
+        Dein Browser unterstützt das Video-Tag nicht.
+      </video>
+    </div>
   </div>
 
   <div class="project-section reveal">
-    <h2>🎯 Ziel des Projekts</h2>
+    <h2>🎯 Was war meine Motivation?</h2>
     <p>
       Ich wollte testen, ob ich ein Produkt so visualisieren kann, dass es wie ein echter Werbespot aussieht – mit Kamerafahrten, Lichtsetzung, Sound und Animation.
     </p>
   </div>
 
   <div class="project-section reveal">
-    <h2>🎞️ Was ich umgesetzt habe</h2>
+    <h2>🛠️ Was ich umgesetzt habe</h2>
     <ul>
       <li>Modellierung eines Smartphones anhand von Referenzbildern</li>
       <li>Materialien & Shader für Bildschirm, Metallrahmen & Glas</li>
@@ -125,7 +129,7 @@
     <canvas id="starCanvas"></canvas>
 
     <div class="footer-content">
-      <p>Build with ❤️ by Jonas</p>
+      <p>Built with ❤️ by Jonas</p>
       <p class="dot">•</p>
       <p>2025</p>
       <p class="dot">•</p>
@@ -196,17 +200,26 @@
     const note1Top = firstNote.offsetTop + (firstNote.offsetHeight / 2);
     const note2Top = secondNote.offsetTop + (secondNote.offsetHeight / 2);
 
-    document.body.style.background = `
+    document.body.style.backgroundImage = `
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('images2/image37.jpg'),
       linear-gradient(
         to bottom,
-        #1f1f1f 0px,
         #1f1f1f ${note1Top}px,
         #111 ${note1Top}px,
         #111 ${note2Top}px,
-        #000 ${note2Top}px,
-        #000 100%
+        #000 ${note2Top}px
       )
     `;
+
+    document.body.style.backgroundRepeat = 'no-repeat, no-repeat, no-repeat';
+    document.body.style.backgroundSize = `
+      ${window.innerWidth}px ${note1Top}px,
+      ${window.innerWidth}px ${note1Top}px,
+      100% 100%
+    `;
+    document.body.style.backgroundPosition = 'top, top, top';
+    document.body.style.backgroundColor = '#000';
   }
 
   window.addEventListener('load', updateBackground);

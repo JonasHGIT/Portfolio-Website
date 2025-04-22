@@ -22,8 +22,8 @@
   <header class="header">
     <div class="intro-animation">
       <div class="intro-container">
-        <h2 class="intro">This is</h2>
-        <h1 class="name1">
+        <!--<h2 class="intro">This is</h2>-->
+        <h1 class="name1" style="display: block; text-align: center;">
           <span class="letter">J</span>
           <span class="letter">o</span>
           <span class="letter">n</span>
@@ -43,7 +43,7 @@
         </h1>        
         
       </div>
-      <div class="project-section">
+      <div class="intro-project-section">
         <h3>
           Als Medientechnik-Student mit Interesse an <strong>interaktiven Medien</strong>, <strong>kreativen Workflows</strong> und <strong>technischer Umsetzung</strong> suche ich ein spannendes <strong>Praxissemester</strong>.  
           Auf dieser Seite zeige ich einige meiner bisherigen Projekte – von ersten <strong>Unity-Prototypen</strong> bis hin zu <strong>3D-Animation</strong>, <strong>Grafikdesign</strong> und <strong>Frontend-Entwicklung</strong>.<br>
@@ -69,19 +69,19 @@
   <h1 style="color: white;">💻 Projekt: Diese Portfolio Website <span class="project-badge private">Privates Projekt</span></h1>
   <p style="color: #ccc;">
     <strong>Status:</strong> Live & aktiv im Ausbau<br>
-    <strong>Technologien:</strong> HTML, CSS, responsive Design (teilweise), JavaScript, GitHub, GitHub Pages<br>
+    <strong>Technologien:</strong> Visual Studio Code, HTML, CSS, responsive Design (teilweise), JavaScript, GitHub, GitHub Pages<br>
     <strong>Ziel:</strong> Eine moderne persönliche Webpräsenz, die mich & meine Projekte gut präsentiert
   </p>
 
   <div class="project-section reveal">
-    <h2>🌐 Motivation</h2>
+    <h2>🎯 Was war meine Motivation?</h2>
     <p>
       Ich wollte einen Ort, an dem ich mich kreativ präsentieren kann – nicht nur mit Bildern, sondern auch mit „DevLogs“ zu jedem Projekt. Die Seite soll wie ein Mini-Blog funktionieren und dabei klar & stylish wirken.
     </p>
   </div>
 
   <div class="project-section reveal">
-    <h2>💡 Was ich gebaut habe</h2>
+    <h2>🛠️ Was ich umgesetzt habe</h2>
     <ul>
       <li>Responsive Layout mit Flexbox/Grid & Media Queries</li>
       <li>Dynamische Projektseiten mit einheitlicher Struktur</li>
@@ -101,6 +101,19 @@
     </ul>
   </div>
 
+  <div class="project-section reveal">
+    <h2>📈 Was würde ich als Nächstes tun?</h2>
+    <ul>
+      <li>Game-Loop entwickeln (Ziel, Fortschritt, Save-System, Missionen/Aufgaben/Quests)</li>
+      <li>UI-Feinschliff, Audio, SFX, VFX (evtl. Animationen, NPC-Models adden)</li>
+      <li>RPG-Systeme und Crafting-Systeme verbessern (Characterauswahl, Skilltree, NPC-Interaktionen, evtl. Crafting-Rezepte)</li>
+      <li>Mehr Polishing für Gameplay-Feedback (Popups, Feedback-Panels)</li>
+      <li>Hauptmenü Screen und weitere Szenen erstellen</li>
+      <li>Allgemeines Bugfixing und Fehlerbehebung (im Gameplay und UI)</li>
+      <li>Code Refactoring und Modularisierung (bessere Wartung und Erweiterbarkeit)</li>
+    </ul>
+  </div>
+
 
 
   <p class="page-note" id="footer-note">
@@ -113,7 +126,7 @@
     <canvas id="starCanvas"></canvas>
 
     <div class="footer-content">
-      <p>Build with ❤️ by Jonas</p>
+      <p>Built with ❤️ by Jonas</p>
       <p class="dot">•</p>
       <p>2025</p>
       <p class="dot">•</p>
@@ -184,17 +197,26 @@
     const note1Top = firstNote.offsetTop + (firstNote.offsetHeight / 2);
     const note2Top = secondNote.offsetTop + (secondNote.offsetHeight / 2);
 
-    document.body.style.background = `
+    document.body.style.backgroundImage = `
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('images2/image37.jpg'),
       linear-gradient(
         to bottom,
-        #1f1f1f 0px,
         #1f1f1f ${note1Top}px,
         #111 ${note1Top}px,
         #111 ${note2Top}px,
-        #000 ${note2Top}px,
-        #000 100%
+        #000 ${note2Top}px
       )
     `;
+
+    document.body.style.backgroundRepeat = 'no-repeat, no-repeat, no-repeat';
+    document.body.style.backgroundSize = `
+      ${window.innerWidth}px ${note1Top}px,
+      ${window.innerWidth}px ${note1Top}px,
+      100% 100%
+    `;
+    document.body.style.backgroundPosition = 'top, top, top';
+    document.body.style.backgroundColor = '#000';
   }
 
   window.addEventListener('load', updateBackground);

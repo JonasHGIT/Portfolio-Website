@@ -22,8 +22,8 @@
   <header class="header">
     <div class="intro-animation">
       <div class="intro-container">
-        <h2 class="intro">This is</h2>
-        <h1 class="name1">
+        <!--<h2 class="intro">This is</h2>-->
+        <h1 class="name1" style="display: block; text-align: center;">
           <!-- Jonas (in Grün) -->
           <span class="letter">J</span>
           <span class="letter">o</span>
@@ -36,16 +36,16 @@
           <span class="letter white">x</span>
           <span class="letter"> </span> <!-- Leerzeichen -->
         
-          <!-- Unity (in Purple) -->
-          <span class="letter purple">U</span>
-          <span class="letter purple">n</span>
-          <span class="letter purple">i</span>
-          <span class="letter purple">t</span>
-          <span class="letter purple">y</span>
+          <!-- Unity (in blue) -->
+          <span class="letter blue">U</span>
+          <span class="letter blue">n</span>
+          <span class="letter blue">i</span>
+          <span class="letter blue">t</span>
+          <span class="letter blue">y</span>
         </h1>         
         
       </div>
-      <div class="project-section">
+      <div class="intro-project-section">
         <h3>
           Als Medientechnik-Student mit Interesse an <strong>interaktiven Medien</strong>, <strong>kreativen Workflows</strong> und <strong>technischer Umsetzung</strong> suche ich ein spannendes <strong>Praxissemester</strong>.  
           Auf dieser Seite zeige ich einige meiner bisherigen Projekte – von ersten <strong>Unity-Prototypen</strong> bis hin zu <strong>3D-Animation</strong>, <strong>Grafikdesign</strong> und <strong>Frontend-Entwicklung</strong>.<br>
@@ -71,7 +71,7 @@
   <h1 style="color: white;">🎮 Projekt: Unity Fantasy Prototyp <span class="project-badge private">Privates Projekt</span></h1>
   <p style="color: #ccc;">
     <strong>Status:</strong> Früher Prototyp, Work in Progress<br>
-    <strong>Technologien:</strong> Unity, C#, Scriptable Objects, Shader Graph, GitHub<br>
+    <strong>Technologien:</strong> Unity, Visual Studio Code, C#, Scriptable Objects, Shader Graph, GitHub<br>
     <strong>Ziel:</strong> Erste Erfahrungen mit Game-Development sammeln – Gameplay-Mechaniken, UI, RPG-Systeme, Crafting & World-Interaktion
   </p>
 
@@ -99,7 +99,7 @@
   
 
   <div class="project-section reveal">
-    <h2>🌱 Was war meine Motivation?</h2>
+    <h2>🎯 Was war meine Motivation?</h2>
     <p>
       Ich wollte herausfinden, wie komplexere Game-Systeme zusammenhängen – und was alles nötig ist, um ein kleines Fantasy-Game auf die Beine zu stellen. 
       Mein Fokus lag nicht auf fertiger Grafik, sondern auf <strong>System-Design</strong>, <strong>Programmier-Übung</strong> und <strong>Feature-Tests</strong>.
@@ -113,17 +113,10 @@
       <li>👤 <strong>Spielersteuerung & Kamera:</strong> PlayerController, CameraSwitcher, Input System</li>
       <li>⚔️ <strong>Kampf & Gegner:</strong> Gegner-Spawn, einfache AI, Projectiles, Health & Damage-Popups</li>
       <li>🎒 <strong>Inventory, Loot & Crafting:</strong> Item-System, LootManager, Crafting mit mehreren Slots</li>
-      <li>🌳 <strong>Interaktion & Worldbuilding:</strong> Interaktive Objekte wie Schmiede, Mount-System, Quests</li>
-      <li>🧠 <strong>UI & RPG-Systeme:</strong> Skill-Leiste, Tooltips, Healthbars, Skilltree, EXP-System</li>
+      <li>🌳 <strong>Interaktion & Worldbuilding:</strong> Interaktive Objekte wie NPCs, Werkbänke, Tresore</li>
+      <li>🧠 <strong>UI & RPG-Systeme:</strong> Skill-Leiste, Tooltips, Healthbars, EXP-System</li>
       <li>⏳ <strong>World Management:</strong> Tageszeit-System, CanvasManager, Feedback-Popups</li>
     </ul>
-  </div>
-
-  <div class="project-section reveal">
-    <h2>🧩 Scriptable Objects</h2>
-    <p>
-      Ich habe Unitys Scriptable Objects genutzt, um Items, Skills und Crafting-Rezepte modular und flexibel zu gestalten – das ermöglicht eine einfache Erweiterbarkeit und bessere Datenverwaltung.
-    </p>
   </div>
 
   <div class="project-section reveal">
@@ -160,7 +153,7 @@
     <canvas id="starCanvas"></canvas>
 
     <div class="footer-content">
-      <p>Build with ❤️ by Jonas</p>
+      <p>Built with ❤️ by Jonas</p>
       <p class="dot">•</p>
       <p>2025</p>
       <p class="dot">•</p>
@@ -246,17 +239,26 @@
     const note1Top = firstNote.offsetTop + (firstNote.offsetHeight / 2);
     const note2Top = secondNote.offsetTop + (secondNote.offsetHeight / 2);
 
-    document.body.style.background = `
+    document.body.style.backgroundImage = `
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('images2/image37.jpg'),
       linear-gradient(
         to bottom,
-        #1f1f1f 0px,
         #1f1f1f ${note1Top}px,
         #111 ${note1Top}px,
         #111 ${note2Top}px,
-        #000 ${note2Top}px,
-        #000 100%
+        #000 ${note2Top}px
       )
     `;
+
+    document.body.style.backgroundRepeat = 'no-repeat, no-repeat, no-repeat';
+    document.body.style.backgroundSize = `
+      ${window.innerWidth}px ${note1Top}px,
+      ${window.innerWidth}px ${note1Top}px,
+      100% 100%
+    `;
+    document.body.style.backgroundPosition = 'top, top, top';
+    document.body.style.backgroundColor = '#000';
   }
 
   window.addEventListener('load', updateBackground);
