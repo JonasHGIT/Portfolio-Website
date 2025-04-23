@@ -12,7 +12,6 @@ Diese Website ist ein Prototyp und zeigt ausgewählte Projekte, Skills und Techn
 
 - **HTML5 & CSS3**
 - **JavaScript**
-- teilweise Responsive Design
 - GitHub Pages für Deployment
 
 ---
@@ -33,7 +32,7 @@ Diese Website ist ein Prototyp und zeigt ausgewählte Projekte, Skills und Techn
 ## 📫 Kontakt
 
 Wenn du Fragen hast oder einfach Hallo sagen willst:  
-**Mail:** [jonas.hammer@stud.hs-emden-leer.de] 
+**Mail:** jonas.hammer@stud.hs-emden-leer.de
 
 ---
 
